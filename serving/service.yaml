@@ -1,0 +1,14 @@
+apiVersion: serving.knative.dev/v1 # Current version of Knative
+kind: Service
+metadata:
+  name: greeter-yaml # The name of the app
+spec:
+  template:
+    metadata:
+      name: greeter-yaml-hello
+    spec:
+      containers:
+        - image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus # The URL to the image of the app
+          env:
+            - name: MESSAGE_PREFIX # The environment variable printed out by the sample app
+              value: "hello"
