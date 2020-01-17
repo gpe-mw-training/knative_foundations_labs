@@ -19,11 +19,8 @@ spec:
               constant: text/plain
           - set-body:
               constant: Hello world!
-  ceOverrides:
-    extensions:
-      kind: hello-world
   sink:
     ref:
-      apiVersion: messaging.knative.dev/v1alpha1
-      kind: InMemoryChannel
-      name: camel-test
+      apiVersion: serving.knative.dev/v1alpha1
+      kind: Service
+      name: event-display

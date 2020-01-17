@@ -1,0 +1,22 @@
+apiVersion: sources.eventing.knative.dev/v1alpha1
+kind: CamelSource
+metadata:
+  name: publisher
+spec:
+  source:
+    flow:
+      from:
+        uri: timer:tick
+        parameters:
+          period: 3s
+        steps:
+          - set-header:
+              name: Content-Type
+              constant: text/plain
+          - set-body:
+              constant: Hello channel!
+  sink:
+    ref:
+      apiVersion: messaging.knative.dev/v1alpha1
+      kind: InMemoryChannel
+      name: basic-channel

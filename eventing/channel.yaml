@@ -1,9 +1,4 @@
 apiVersion: messaging.knative.dev/v1alpha1
-kind: Channel
+kind: InMemoryChannel
 metadata:
-  name: knative-foundations-channel
-spec:
-  provisioner:
-    apiVersion: eventing.knative.dev/v1alpha1
-    kind: ClusterChannelProvisioner
-    name: in-memory-channel
+  name: basic-channel

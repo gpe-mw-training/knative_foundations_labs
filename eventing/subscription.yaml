@@ -5,10 +5,10 @@ metadata:
 spec:
   channel:
     apiVersion: messaging.knative.dev/v1alpha1
-    kind: Channel
-    name: knative-foundations-channel
+    kind: InMemoryChannel
+    name: basic-channel
   subscriber:
     ref:
       apiVersion: serving.knative.dev/v1alpha1
       kind: Service
-      name: greeter-cli
+      name: event-display

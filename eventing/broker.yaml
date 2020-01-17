@@ -1,8 +1,0 @@
-apiVersion: eventing.knative.dev/v1alpha1
-kind: Broker
-metadata:
-  name: knative-foundations-broker
-spec:
-  channelTemplateSpec:
-    apiVersion: eventing.knative.dev/v1alpha1
-    kind: InMemoryChannel
